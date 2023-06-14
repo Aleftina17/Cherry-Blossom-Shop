@@ -1,0 +1,22 @@
+.section-top-rated {
+    margin-top: 90px;
+}
+
+.top-rated {
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+
+
+    &__cards {
+        display: grid;
+        align-self: normal;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-column-gap: 55px;
+        grid-row-gap: 40px;
+    }
+}
+
+

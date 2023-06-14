@@ -1,0 +1,72 @@
+.section-footer {
+    padding-bottom: 30px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &__menu,
+    &__notice {
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        flex-basis: 15%;
+
+        a {
+            color: inherit;
+        }
+
+        .list__title {
+            font-weight: 700;
+            font-size: 24px;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .list__item{
+            font-size: 12px;
+            margin-bottom: 14px;
+        }
+    }
+
+    &__contact {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        a {
+            color: inherit;
+        }
+
+        &--img{
+            margin-bottom: 30px;
+        }
+
+        &--address, &--time, &--phone, &--email{
+            font-size: 12px;
+        }
+
+        &--address, &--time, &--email{
+            margin-bottom: 18px;
+        }
+
+        &--socials{
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        &--payment{
+            margin-bottom: 17px;
+        }
+
+        
+    }
+}

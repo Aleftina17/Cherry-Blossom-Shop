@@ -1,0 +1,16 @@
+.section-collections {
+    margin-top: 90px;
+}
+
+.collections {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+    }
+}

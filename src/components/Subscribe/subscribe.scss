@@ -1,0 +1,38 @@
+.section-subscribe {
+    background-color: #ffd1d7;
+}
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 27px 10px 22px;
+
+    &__title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    &__desc {
+        margin-bottom: 12px;
+    }
+
+    &__input-wrapper {
+        width: 40%;
+        min-width: 245px;
+        background-color: #fff;
+        padding: 12px 14px;
+        border-radius: 5px;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        input {
+            width: 100%;
+        }
+    }
+
+}

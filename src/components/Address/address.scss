@@ -1,0 +1,42 @@
+.section-address {
+    background-image: url("./../../assets/img/address/address-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__card {
+        background-color: #fff;
+        padding: 70px 75px;
+        margin: 120px auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 466px;
+
+        &--img {
+            margin-bottom: 7px;
+        }
+
+        &--title {
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        &--address, &--time{
+            text-align: center;
+        }
+
+        &--address{
+            margin-bottom: 32px;
+        }
+    }
+}

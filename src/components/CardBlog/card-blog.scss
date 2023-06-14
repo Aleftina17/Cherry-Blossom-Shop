@@ -1,0 +1,34 @@
+.card-blog {
+    background-color: #fff;
+    min-width: 290px;
+    
+
+    &__img{
+        
+        overflow: hidden;
+
+        img{
+            width: 100%;
+            height: 100%;
+            transform: scale(1.2);
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        padding: 15px 16px 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    
+
+        &--title {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        &--desc {
+            font-size: 12px;
+        }
+    }
+}

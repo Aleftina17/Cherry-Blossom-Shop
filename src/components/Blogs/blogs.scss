@@ -1,0 +1,25 @@
+.section-blogs{
+    background-color: #FFD1D7;
+    padding: 30px 0 40px;
+    margin-bottom: 46px;
+}
+
+.blogs{
+    display: flex;
+    flex-direction: column;
+
+    &__title{
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    &__cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        grid-column-gap: 55px;
+        grid-row-gap: 40px;
+        justify-items: center;
+    }
+}
