@@ -33,7 +33,7 @@ const ContactsPage = () => {
           <div className="contacts-page__title">WRITE TO US</div>
           <div className="contacts-page__form--wrapper">
           <div className="container container--sm">
-            <form  className="contacts-page__form">
+            <form  className="contacts-page__form" id="contactForm">
                 <div className="contacts-page__form--user-info">
                     <input type="text" placeholder="Name"/>
                     <input type="email" placeholder="Email" />

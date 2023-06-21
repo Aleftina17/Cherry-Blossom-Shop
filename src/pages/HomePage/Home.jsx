@@ -1,4 +1,6 @@
+
 import Address from '../../components/Address/Address';
+import Slider from '../../components/Blogs/Blogs';
 import Blogs from '../../components/Blogs/Blogs';
 import Collections from '../../components/Collections/Collections';
 import Faq from '../../components/Faq/Faq';
@@ -20,7 +22,7 @@ const Home = () => {
         <Subscribe />
         <Faq />
         <FollowUs />
-        <Blogs />
+        <Blogs /> 
         <Address />
         </>
      );

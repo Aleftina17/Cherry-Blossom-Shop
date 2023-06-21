@@ -5,7 +5,7 @@ import './common.scss'
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-
+import CartPage from "./pages/CartPage/CartPage";
 import Home from "./pages/HomePage/Home";
 import AboutUsPage from "./pages/AboutUsPage/AboutUsPage";
 import CollectionsPage from "./pages/CollectionsPage/CollectionsPage";
@@ -39,6 +39,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/collections" element={<CollectionsPage />} />

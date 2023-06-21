@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import "./header.scss";
 
 import loupe from "./../../assets/img/navbar/loupe-icon.svg";
@@ -19,9 +21,9 @@ const Header = ({ toggleMenu }) => {
             <button className="btn btn--search">
               <img src={loupe} alt="search" />
             </button>
-            <button className="btn btn--cart">
+            <NavLink to='/cart' className="btn btn--cart">
               <div className="cart__price">40,25$</div>
-            </button>
+            </NavLink>
           </div>
         </nav>
       </div>

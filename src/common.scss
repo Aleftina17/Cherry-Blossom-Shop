@@ -11,6 +11,45 @@
     box-sizing: border-box;
 }
 
+/* Scrollbar */
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ffd1d7 #ffffff;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-track:hover {
+    background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-track:active {
+    background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: #ffd1d7;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #ffd1d7;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background-color: darken(#ffd1d7, 10%);
+}
+
 /* Links */
 
 a,
@@ -25,6 +64,11 @@ a:hover {
 }
 
 /* Common */
+
+* {
+    scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
+}
 
 aside,
 nav,
@@ -147,6 +191,9 @@ h2 {
     font-weight: 700;
     white-space: nowrap;
 
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
     &--menu {
         width: 45px;
         height: 45px;
@@ -173,6 +220,10 @@ h2 {
             top: 26px;
             left: 13px;
         }
+
+        &:hover {
+            background-color: lighten(#ffd1d7, 6%);
+        }
     }
 
     &--search {
@@ -181,6 +232,10 @@ h2 {
         img {
             width: 15px;
             height: 15px;
+        }
+
+        &:hover {
+            background-color: lighten(#ffd1d7, 6%);
         }
     }
 
@@ -210,11 +265,20 @@ h2 {
             width: 13px;
             height: 13px;
         }
+
+        &:hover {
+            background-color: lighten(#ffd1d7, 6%);
+        }
     }
 
     &--view-now {
         padding: 17px 56px;
         font-size: 24px;
+
+        &:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.4));
+        }
     }
 
     &--add-to-cart {
@@ -224,6 +288,21 @@ h2 {
         background-color: #665f5f;
         color: #fff;
         padding: 9px 14px;
+
+        &:hover,
+        &:focus {
+            background-color: lighten(#665f5f, 20%);
+        }
+    }
+
+    &--sold-out {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 1.2;
+        background-color: darken(#FFD1D7, 5%);
+        color: #fff;
+        padding: 9px 14px;
+        filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.25));
     }
 
     &--show-more {
@@ -232,6 +311,11 @@ h2 {
         line-height: 1.2;
         padding: 17px 47px;
         color: #fff;
+
+        &:hover,
+        &:focus {
+            background-color: lighten(#665f5f, 20%);
+        }
     }
 
     &--load-more {
@@ -240,5 +324,44 @@ h2 {
         font-weight: 700;
         font-size: 24px;
         padding: 19px 30px;
+
+        &:hover,
+        &:focus {
+            background-color: lighten(#665f5f, 20%);
+        }
+    }
+
+    &--prev, &--next{
+        height: 45px;
+        width: 45px;
+        padding: 9px 18px;
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        &:hover{
+            transform: scale(1.05);
+        }
+        
+    }
+
+    &--prev{
+        background-image: url('./assets/img/our-blogs/arrow-prev.svg');
+    }
+
+    &--next{
+        background-image: url('./assets/img/our-blogs/arrow-next.svg');
+    }
+
+    &--check-out{
+        background-color: #665F5F;
+        color: #fff;
+        padding: 17px 54px;
+        font-size: 24px;
+
+        &:hover,
+        &:focus {
+            background-color: lighten(#665f5f, 20%);
+        }
     }
 }

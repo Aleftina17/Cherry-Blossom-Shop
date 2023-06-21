@@ -1,0 +1,48 @@
+.special-offer {
+    margin-top: 90px;
+    margin-bottom: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 27px;
+    }
+
+    &__cards {
+        display: grid;
+        align-self: normal;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-column-gap: 55px;
+        grid-row-gap: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+.special-offer__card {
+    position: relative;
+
+    &::before {
+        content: "ON SALE";
+        position: absolute;
+        text-align: center;
+        font-weight: 700;
+        font-size: 16px;
+        padding: 12px 14px;
+        top: 0;
+        left: 0;
+        background-color: #f26c4f;
+        color: #fff;
+        width: 111px;
+        height: 43px;
+        z-index: 1;
+    }
+
+    .card__desc__info--price{
+        text-decoration: line-through;
+        font-weight: 400;
+    }
+
+}

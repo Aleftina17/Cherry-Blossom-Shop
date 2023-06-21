@@ -1,86 +1,106 @@
+import { useState } from "react";
+
 import Navigation from "../../components/Navigation/Navigation";
 import Card from "../../components/Card/Card";
-import "./catalog-page.scss";
 
-import topImg1 from "./../../assets/img/top-rated/top-1.jpg";
+import "./catalog-page.scss";
+import productsData from "../../data/products";
 
 const CatalogPage = () => {
+  const [sortOption, setSortOption] = useState("value1");
+
+  // Функция обработки изменения значения в select
+
+  const handleSortChange = (event) => {
+    setSortOption(event.target.value);
+  };
+
+  // Функция для сортировки по цене: от наименьшей к наибольшей
+
+  const sortByPriceLowToHigh = (a, b) => {
+    return a.discountPrice - b.discountPrice;
+  };
+
+  // Функция для сортировки по цене: от наибольшей к наименьшей
+
+  const sortByPriceHighToLow = (a, b) => {
+    return b.discountPrice - a.discountPrice;
+  };
+
+  // Функция для сортировки по дате: от новых к старым
+
+  const sortByDate = (a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA;
+  };
+
+  // Функция для сортировки по дате: от новых к старым
+
+  const sortByRate = (a, b) => {
+    return b.rate - a.rate;
+  };
+  
+
+  // Копия отсортированного массива продуктов в соответствии с выбранной опцией сортировки
+  const sortedProducts = [...productsData];
+
+  if (sortOption === "value3") {
+    sortedProducts.sort(sortByPriceLowToHigh);
+  } else if (sortOption === "value4") {
+    sortedProducts.sort(sortByPriceHighToLow);
+  } else if (sortOption === "value2") {
+    sortedProducts.sort(sortByDate);
+  } else if (sortOption === "value1") {
+    sortedProducts.sort(sortByRate);
+  }
+
   return (
     <section className="scetion-catalog-page">
       <div className="container">
         <Navigation title="Catalog" />
-          <div className="catalog-page">
-            <div className="catalog-page__title">Catalog</div>
-            <div className="container container--sm">
+        <div className="catalog-page">
+          <div className="catalog-page__title">Catalog</div>
+          <div className="container container--sm">
             <div className="catalog-page__content">
-                
               <div className="catalog-page__filter">
                 Sort by:
-                
-                
-                <select className="filter__select" name="filter" id="filter" defaultValue="value1">
-                    
-                  <option value="value1" >Best selling</option>
-                  <option value="value2">
-                    Newest arrivals
-                  </option>
+                <select
+                  className="filter__select"
+                  name="filter"
+                  id="filter"
+                  value={sortOption}
+                  onChange={handleSortChange}
+                >
+                  <option value="value1">Best selling</option>
+                  <option value="value2">Newest arrivals</option>
                   <option value="value3">Price: low to high</option>
                   <option value="value4">Price: high to low</option>
-
                 </select>
-
-                <span className="filter__quantity">547 products</span>
+                <span className="filter__quantity">
+                  {sortedProducts.length} products
+                </span>
               </div>
 
               <div className="catalog-page__cards">
-                <Card
-                  title="Cristal (pink carnations with mix flowers)"
-                  price="$125.00"
-                  img={topImg1}
+                {sortedProducts.map((product) => (
+                  <Card
+                  key={product.title}
+                  title={product.title}
+                  price={`$${product.price}`}
+                  isOnSale={product.isOnSale}
+                  discountPrice={`$${product.discountPrice}`}
+                  discount={`-${product.discount * 100}%`}
+                  img={product.img}
+                  amount={product.amount}
+                  className='catalog-page__card'
                 />
-                <Card
-                  title="Cristal (pink carnations with mix flowers)"
-                  price="$125.00"
-                  img={topImg1}
-                />
-                <Card
-                  title="Cristal (pink carnations with mix flowers)"
-                  price="$125.00"
-                  img={topImg1}
-                />
-                <Card
-                  title="Cristal (pink carnations with mix flowers)"
-                  price="$125.00"
-                  img={topImg1}
-                />
-                <Card
-                  title="Cristal (pink carnations with mix flowers)"
-                  price="$125.00"
-                  img={topImg1}
-                />
-                <Card
-                  title="Cristal (pink carnations with mix flowers)"
-                  price="$125.00"
-                  img={topImg1}
-                />
-                <Card
-                  title="Cristal (pink carnations with mix flowers)"
-                  price="$125.00"
-                  img={topImg1}
-                />
-                <Card
-                  title="Cristal (pink carnations with mix flowers)"
-                  price="$125.00"
-                  img={topImg1}
-                />
-                <Card
-                  title="Cristal (pink carnations with mix flowers)"
-                  price="$125.00"
-                  img={topImg1}
-                />
+                ))}
               </div>
 
-              <div className="catalog-page__pagination">1 - 9 of 517 products</div>
+              <div className="catalog-page__pagination">
+                1 - 9 of {sortedProducts.length} products
+              </div>
               <button className="btn btn--load-more">Load more</button>
             </div>
           </div>

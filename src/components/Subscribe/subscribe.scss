@@ -36,3 +36,17 @@
     }
 
 }
+
+.input-submit {
+
+    img{
+        transition: transform .15s ease-in;
+    }
+
+    &:hover{
+        img{
+            transform: translateX(4px);
+        }
+    }
+
+}

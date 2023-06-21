@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./footer.scss";
 
 import logoBig from "./../../assets/img/footer/logo-big.svg";
@@ -15,22 +16,22 @@ const Footer = () => {
             <ul className="list">
               <span className="list__title">  Menu  </span>
               <li className="list__item">
-                <a href="#!">Search</a>
+                <NavLink to="/search">Search</NavLink>
               </li>
               <li className="list__item">
-                <a href="#!">Home</a>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li className="list__item">
-                <a href="#!">About us</a>
+                <NavLink to="/about-us">About us</NavLink>
               </li>
               <li className="list__item">
-                <a href="#!">Catalog</a>
+                <NavLink to="/catalog">Catalog</NavLink>
               </li>
               <li className="list__item">
-                <a href="#!">Collections</a>
+                <NavLink to="/collections">Collections</NavLink>
               </li>
               <li className="list__item">
-                <a href="#!">Contacts</a>
+                <NavLink to="/contacts">Contacts</NavLink>
               </li>
             </ul>
           </div>

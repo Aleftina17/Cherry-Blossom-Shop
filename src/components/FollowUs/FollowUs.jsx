@@ -12,7 +12,9 @@ const FollowUs = () => {
             @CHERRYBLOSSOM.LA
           </a>
           <div className="follow-us__inst-screen">
+            <a href="#!">
             <img src={instScreen} alt="instagram" />
+            </a>
           </div>
         </div>
       </div>

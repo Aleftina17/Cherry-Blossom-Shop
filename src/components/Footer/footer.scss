@@ -18,7 +18,11 @@
         flex-basis: 15%;
 
         a {
-            color: inherit;
+            transition: color 0.1s ease-in;
+    
+            &:hover {
+                color: darken(#ffd1d7, 5%);
+            }
         }
 
         .list__title {

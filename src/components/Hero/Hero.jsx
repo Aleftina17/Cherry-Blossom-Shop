@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./hero.scss";
 
 import delivery1 from "./../../assets/img/hero/hero-delivery-icon.svg";
@@ -13,7 +14,7 @@ const Hero = () => {
             Our goal is to provide the highest quality and fresh flower delivery
             in Los Angeles.
           </div>
-          <button className="btn btn--view-now">View now</button>
+          <NavLink to="/catalog" className="btn btn--view-now">View now</NavLink>
         </div>
       </div>
 

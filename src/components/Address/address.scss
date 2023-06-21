@@ -11,6 +11,14 @@
     align-items: center;
     justify-content: center;
 
+    a {
+        transition: color 0.1s ease-in;
+
+        &:hover {
+            color: darken(#ffd1d7, 5%);
+        }
+    }
+
     &__card {
         background-color: #fff;
         padding: 70px 75px;
