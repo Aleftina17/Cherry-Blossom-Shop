@@ -15,6 +15,7 @@ import CatalogPage from "./pages/CatalogPage/CatalogPage";
 import ScrollToTop from './utils/scrollToTop'
 import SearchPage from "./pages/SearchPage/SearchPage";
 import ContactsPage from "./pages/ContactsPage/ContactsPage";
+import PurchaseModal from "./components/PurchaseModal/PurchaseModal";
 
 function App() {
 

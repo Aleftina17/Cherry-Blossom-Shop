@@ -5,31 +5,31 @@ import blogImg3 from './../assets/img/our-blogs/blogs-3.jpg'
 
 const blogs = [
     {
-      id: '1b',
+      id: 'bl-1',
       title: "In amet, mollis",
       text: "Ipsum dui sit non ipsum leo, dictumst. Dictumst. Et pulvinar leo, id ut. Eget mattis pellentesque mattis dolor adipiscing accumsan elit. Non libero, libero, amet tortor, velit ex.",
       img: blogImg1
     },
     {
-      id: '2b',
+      id: 'bl-2',
       title: "Lorem dui non",
       text: "Ipsum dui sit non ipsum leo, dictumst. Dictumst. Et pulvinar leo, id ut. Eget mattis pellentesque mattis dolor adipiscing accumsan elit. Non libero, libero, amet tortor, velit ex.",
       img: blogImg2
     },
     {
-      id: '3b',
+      id: 'bl-3',
       title: "Dictumst",
       text: "Ipsum dui sit non ipsum leo, dictumst. Dictumst. Et pulvinar leo, id ut. Eget mattis pellentesque mattis dolor adipiscing accumsan elit. Non libero, libero, amet tortor, velit ex.",
       img: blogImg3
     },
     {
-      id: '1b',
+      id: 'bl-4',
       title: "In amet, mollis",
       text: "Ipsum dui sit non ipsum leo, dictumst. Dictumst. Et pulvinar leo, id ut. Eget mattis pellentesque mattis dolor adipiscing accumsan elit. Non libero, libero, amet tortor, velit ex.",
       img: blogImg1
     },
     {
-      id: '2b',
+      id: 'bl-5',
       title: "Lorem dui non",
       text: "Ipsum dui sit non ipsum leo, dictumst. Dictumst. Et pulvinar leo, id ut. Eget mattis pellentesque mattis dolor adipiscing accumsan elit. Non libero, libero, amet tortor, velit ex.",
       img: blogImg2

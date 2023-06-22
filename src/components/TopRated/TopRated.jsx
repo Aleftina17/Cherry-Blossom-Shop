@@ -5,7 +5,7 @@ import "./top-rated.scss";
 import Card from "../Card/Card";
 import productsData from "./../../data/products";
 
-const TopRated = () => {
+const TopRated = (props) => {
 
   const sortByRate = (a, b) => {
     return b.rate - a.rate;
@@ -33,12 +33,15 @@ const TopRated = () => {
           <div className="top-rated__cards">
             {displayedProducts.map((product) => (
               <Card
-                  key={product.title}
-                  title={product.title}
-                  price={`$${product.discountPrice}`}
-                  img={product.img}
-                  amount={product.amount}
-                />
+              key={product.title}
+              title={product.title}
+              price={`$${product.price}`}
+              isOnSale={product.isOnSale}
+              discountPrice={`$${product.discountPrice}`}
+              discount={`-${product.discount * 100}%`}
+              img={product.img}
+              amount={product.amount}
+            />
             ))}
           </div>
 

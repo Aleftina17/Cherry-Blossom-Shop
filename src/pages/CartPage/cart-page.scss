@@ -50,39 +50,6 @@
         }
     }
 
-    &__quantity {
-        max-width: 90px;
-        height: 29px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border: 1px solid #665f5f;
-        border-radius: 5px;
-        padding: 4px 15px;
-        font-size: 16px;
-
-        button {
-            font-size: 16px;
-            font-weight: 700;
-            padding: 5px;
-        }
-
-        input {
-            border: none;
-            outline: none;
-            display: block;
-            height: 32px;
-            line-height: 32px;
-            width: 100%;
-            text-align: center;
-
-            &::-webkit-outer-spin-button,
-            &::-webkit-inner-spin-button {
-                display: none;
-            }
-        }
-    }
-
     &__price {
         font-weight: 700;
         font-size: 24px;
