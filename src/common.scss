@@ -243,6 +243,18 @@ h2 {
         padding: 15px 13px 18px 40px;
         position: relative;
 
+        &__indicator{
+            content: "";
+            position: absolute;
+            top: -4px;
+            right: 0;
+            background: #ffd1d7;
+            border: 2px solid #ededed;
+            border-radius: 14px;
+            width: 13px;
+            height: 13px;
+        }
+
         &::before {
             content: "";
             position: absolute;
@@ -254,17 +266,6 @@ h2 {
             height: 100%;
         }
 
-        &::after {
-            content: "";
-            position: absolute;
-            top: -4px;
-            right: 0;
-            background: #ffd1d7;
-            border: 2px solid #ededed;
-            border-radius: 14px;
-            width: 13px;
-            height: 13px;
-        }
 
         &:hover {
             background-color: lighten(#ffd1d7, 6%);

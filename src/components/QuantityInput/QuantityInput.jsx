@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./quantity-input.scss";
 
 const QuantityInput = ({ quantity, setQuantity }) => {
+
   const handleDecrease = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
@@ -10,6 +11,14 @@ const QuantityInput = ({ quantity, setQuantity }) => {
 
   const handleIncrease = () => {
     setQuantity(quantity + 1);
+  };
+
+  const handleInputChange = (e) => {
+    const value = parseInt(e.target.value);
+
+    if (!isNaN(value) && value > 0) {
+      setQuantity(value);
+    }
   };
 
   return (
@@ -22,7 +31,7 @@ const QuantityInput = ({ quantity, setQuantity }) => {
         id="quantityInput"
         min="1"
         value={quantity}
-        onChange={(e) => setQuantity(+(e.target.value))}
+        onChange={handleInputChange}
         required
       />
       <button class="minus" type="button" onClick={handleIncrease}>

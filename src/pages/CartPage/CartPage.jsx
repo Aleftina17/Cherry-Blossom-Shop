@@ -12,8 +12,7 @@ import QuantityInput from "../../components/QuantityInput/QuantityInput";
 
 
 const CartPage = () => {
-  const { removeFromCart } = useContext(CartContext);
-  const { cartItems, updateCartItemQuantity } = useContext(CartContext);
+  const { removeFromCart, cartItems, updateCartItemQuantity} = useContext(CartContext);
   const [subtotal, setSubtotal] = useState(0);
 
   const handleQuantityChange = (index, value) => {
@@ -32,11 +31,14 @@ const CartPage = () => {
         total += price * item.quantity;
       });
       setSubtotal(total);
+     
     };
     calculateSubtotal();
-  }, [cartItems]);
+  }, [cartItems])
+
 
   return (
+    
     <section className="section-cart">
       <div className="container">
         <div className="cart__header">
@@ -48,8 +50,10 @@ const CartPage = () => {
 
         <div className="cart">
 
-          
-          {cartItems.map((item, index) => (
+          {cartItems.length === 0 ? (
+            <div className="cart__empty">Your cart is empty</div>
+          ) : (
+          cartItems.map((item, index) => (
             <div className="cart__row" key={item.title}>
               <div className="cart__product">
                 <img
@@ -77,7 +81,7 @@ const CartPage = () => {
 
               <div className="cart__price">{`$${item.price.replace('$', '') * item.quantity}`}</div>
             </div>
-          ))}
+          )))}
 
 
         </div>

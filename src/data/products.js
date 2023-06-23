@@ -13,7 +13,7 @@ const products = [
     id: "pr-1",
     title: "Cristal (pink carnations with mix flowers)",
     price: 100.00,
-    discount: 0.2,
+    discount: 0.1,
     get discountPrice() {
       return this.price - this.price * this.discount;
     },

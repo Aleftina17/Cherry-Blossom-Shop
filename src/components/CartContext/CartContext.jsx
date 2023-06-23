@@ -1,9 +1,10 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [subtotal, setSubtotal] = useState(0);
 
   const addToCart = (product) => {
     setCartItems([...cartItems, product]);
@@ -21,6 +22,17 @@ const CartProvider = ({ children }) => {
     setCartItems(updatedCartItems);
   };
 
+  useEffect(() => {
+    const calculateSubtotal = () => {
+      let total = 0;
+      cartItems.forEach((item) => {
+        const price = parseFloat(item.price.replace("$", ""));
+        total += price * item.quantity;
+      });
+      setSubtotal(total);
+    };
+    calculateSubtotal();
+  }, [cartItems]);
 
   return (
     <CartContext.Provider
@@ -29,6 +41,7 @@ const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         updateCartItemQuantity,
+        subtotal,
       }}
     >
       {children}
