@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="footer">
           <div className="footer__menu">
             <ul className="list">
-              <span className="list__title">  Menu  </span>
+              <h4 className="list__title"> Menu </h4>
               <li className="list__item">
                 <NavLink to="/search">Search</NavLink>
               </li>
@@ -35,7 +35,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div className="footer__contact">
             <img
               className="footer__contact--img"
@@ -62,9 +62,15 @@ const Footer = () => {
               cherryblossom@gmail.com
             </a>
             <div className="footer__contact--socials">
-              <img src={pinterestIco} alt="Pinterest" />
-              <img src={instagramIco} alt="Instagram" />
-              <img src={facebookIco} alt="Facebook" />
+              <a href="#!">
+                <img src={pinterestIco} alt="Pinterest" />
+              </a>
+              <a href="#!">
+                <img src={instagramIco} alt="Instagram" />
+              </a>
+              <a href="#!">
+                <img src={facebookIco} alt="Facebook" />
+              </a>
             </div>
             <img
               src={payment}
@@ -75,27 +81,27 @@ const Footer = () => {
               © 2022, Los Angeles Florist - Cherry Blossom
             </div>
           </div>
-        
-        <div className="footer__notice">
-          <ul className="list">
-            <span className="list__title">Legal Notice</span>
-            <li className="list__item">
-              <a href="#!">Privacy Policy</a>
-            </li>
-            <li className="list__item">
-              <a href="#!">Terms of Service</a>
-            </li>
-            <li className="list__item">
-              <a href="#!">Refund Policy</a>
-            </li>
-            <li className="list__item">
-              <a href="#!">Shipping police</a>
-            </li>
-            <li className="list__item">
-              <a href="#!">Billing and payment</a>
-            </li>
-          </ul>
-        </div>
+
+          <div className="footer__notice">
+            <ul className="list">
+              <h4 className="list__title">Legal Notice</h4>
+              <li className="list__item">
+                <a href="#!">Privacy Policy</a>
+              </li>
+              <li className="list__item">
+                <a href="#!">Terms of Service</a>
+              </li>
+              <li className="list__item">
+                <a href="#!">Refund Policy</a>
+              </li>
+              <li className="list__item">
+                <a href="#!">Shipping police</a>
+              </li>
+              <li className="list__item">
+                <a href="#!">Billing and payment</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>

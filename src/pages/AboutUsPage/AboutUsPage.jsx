@@ -12,7 +12,7 @@ const AboutUs = () => {
       <div className="container">
         <Navigation title="About Us" />
         <div className="about-us">
-          <div className="about-us__title">ABOUT US</div>
+          <h3 className="about-us__title">ABOUT US</h3>
         </div>
       </div>
       <img src={aboutUsImg} alt="About us" className="section-about-us__img" />

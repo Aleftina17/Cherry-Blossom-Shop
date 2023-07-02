@@ -60,11 +60,11 @@ const CatalogPage = () => {
       <div className="container">
         <Navigation title="Catalog" />
         <div className="catalog-page">
-          <div className="catalog-page__title">Catalog</div>
+          <h3 className="catalog-page__title">Catalog</h3>
           <div className="container container--sm">
             <div className="catalog-page__content">
               <div className="catalog-page__filter">
-                Sort by:
+                <span className="filter__sort"> Sort by:</span>
                 <select
                   className="filter__select"
                   name="filter"
@@ -85,7 +85,8 @@ const CatalogPage = () => {
               <div className="catalog-page__cards">
                 {sortedProducts.map((product) => (
                   <Card
-                  key={product.title}
+                  id={product.id} 
+                  key={product.id}
                   title={product.title}
                   price={`$${product.price}`}
                   isOnSale={product.isOnSale}

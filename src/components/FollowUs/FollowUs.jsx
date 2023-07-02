@@ -7,7 +7,7 @@ const FollowUs = () => {
     <section className="section-follow-us">
       <div className="container">
         <div className="follow-us">
-          <div className="follow-us__title">FOLLOW US ON INSTAGRAM</div>
+          <h3 className="follow-us__title">FOLLOW US ON&nbsp;INSTAGRAM</h3>
           <a href="#!" className="follow-us__link">
             @CHERRYBLOSSOM.LA
           </a>

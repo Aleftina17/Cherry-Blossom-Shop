@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./faq.scss";
 
 import arrowDown from "./../../assets/img/faq/arrow-down.svg";
@@ -58,20 +58,22 @@ const Faq = () => {
     <section className="section-faq">
       <div className="container container--sm">
         <div className="faq">
-          <div className="faq__title">Frequently Asking Questions</div>
+          <h3 className="faq__title">Frequently Asking Questions</h3>
           <ul className="faq__list">
             {faqData.map((item, index) => (
               <li className="faq__list__item" key={index}>
                 <div className="faq__question">
-                  <div className="faq__question--text ">{item.question}</div>
-                  <button
+                  <a
                     className={`faq__question--toggler ${
                       openIndex === index ? "open" : ""
                     }`}
                     onClick={() => toggleAnswer(index)}
                   >
+              
+                    <span>{item.question}</span>
                     <img src={arrowDown} alt="open/close" />
-                  </button>
+
+                  </a>
                 </div>
 
                 <div

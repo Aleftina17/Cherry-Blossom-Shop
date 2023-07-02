@@ -1,3 +1,4 @@
+
 import productImg1 from "./../assets/img/products/product-1.jpg";
 import productImg2 from "./../assets/img/products/product-2.jpg";
 import productImg3 from "./../assets/img/products/product-3.jpg";
@@ -21,7 +22,7 @@ const products = [
     isOnSale: true,
     isSoldOut: false,
     rate: 99,
-    date: "09.11.2023",
+    date: "10.10.2022",
     amount: 10,
   },
   {
@@ -101,7 +102,7 @@ const products = [
   },
   {
     id: "pr-7",
-    title: "45 red roses",
+    title: "45 red France roses",
     price: 150.00,
     discount: 0.4,
     get discountPrice() {

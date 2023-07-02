@@ -15,14 +15,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 
     position: relative;
-}
-
-.nav__menu,
-.nav__logo,
-.nav__widgets {
-    cursor: pointer;
 }
 
 .nav__logo {
@@ -30,6 +25,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @media screen and (max-width: 640px) {
+        display: none;
+    }
 }
 
 .nav__widgets {

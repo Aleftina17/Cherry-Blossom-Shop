@@ -18,7 +18,10 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="hero__footer">
+      <div className="hero__footer--wrapper">
+
+      <div className="hero__footer container">
+
         <div className="hero__footer__item">
           <div className="hero__footer__content">
             <div className="hero__footer__content--title">
@@ -40,6 +43,9 @@ const Hero = () => {
 
           <img className="hero__footer__img" src={delivery2} alt="delivery" />
         </div>
+
+
+      </div>
       </div>
     </section>
   );

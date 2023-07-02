@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import Navigation from "../../components/Navigation/Navigation";
 import "./search-page.scss";
@@ -35,7 +36,7 @@ const SearchPage = () => {
         <Navigation title="Search" />
       </div>
       <div className="search-page">
-        <div className="search-page__title">Search</div>
+        <h3 className="search-page__title">Search</h3>
 
         <div className="search-page__search-wrapper">
           <input
@@ -54,14 +55,16 @@ const SearchPage = () => {
             <ul className="suggestions">
               {suggestions.map((product) => (
                 <li key={product.id}>
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: higlightMatchingLetters(
-                        product.title,
-                        searchQuery
-                      ),
-                    }}
-                  ></div>
+                  <NavLink to={`/product/${product.id}`}>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: higlightMatchingLetters(
+                          product.title,
+                          searchQuery
+                        ),
+                      }}
+                    ></div>
+                  </NavLink>
                 </li>
               ))}
             </ul>

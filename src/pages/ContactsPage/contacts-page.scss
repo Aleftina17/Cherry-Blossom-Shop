@@ -1,16 +1,16 @@
 .section-contacts-page {
     margin-bottom: 107px;
+
+    @media screen and (max-width:760px) {
+        margin-bottom: 60px;
+    }
 }
 
 .contacts-page {
     padding-top: 45px;
 
     &__title {
-        font-weight: 700;
-        font-size: 40px;
-        text-align: center;
         margin-bottom: 40px;
-        text-transform: uppercase;
     }
 
     &__video {
@@ -29,6 +29,21 @@
 .react-player {
     width: 800px;
     height: 540px;
+
+    @media screen and (max-width: 680px) {
+        width: 500px !important;
+        height: 240px !important;
+    }
+
+    @media screen and (max-width: 535px) {
+        width: 400px !important;
+        height: 200px !important;
+    }
+
+    @media screen and (max-width: 440px) {
+        width: 320px !important;
+        height: 180px !important;
+    }
 }
 
 .contacts-page__form--wrapper {
@@ -45,12 +60,22 @@
     &--user-info {
         display: flex;
         justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        
 
         input {
+            
             background-color: #fff;
             border-radius: 5px;
             padding: 24px 30px;
             filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+
+            @media screen and (max-width: 822px) {
+                width: 100%;
+                padding: 18px 20px;
+            }
 
             &::-webkit-inner-spin-button,
             &::-webkit-outer-spin-button {

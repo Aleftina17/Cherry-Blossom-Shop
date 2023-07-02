@@ -15,13 +15,13 @@ const ContactsPage = () => {
       <div className="contacts-page">
 
         <div className="contacts-page__address">
-          <div className="contacts-page__title">Contacts</div>
+          <h3 className="contacts-page__title">Contacts</h3>
           <Address />
         </div>
 
         <div className="contacts-page__video">
           <div className="container container--sm">
-            <div className="contacts-page__title">How to get to us?</div>
+            <h3 className="contacts-page__title">How to get to us?</h3>
             <ReactPlayer
               className="react-player"
               url="https://www.youtube.com/watch?v=qkw-P2BDsPw"
@@ -30,7 +30,7 @@ const ContactsPage = () => {
         </div>
 
         <div className="contacts-page__write">
-          <div className="contacts-page__title">WRITE TO US</div>
+          <h3 className="contacts-page__title">WRITE TO US</h3>
           <div className="contacts-page__form--wrapper">
           <div className="container container--sm">
             <form  className="contacts-page__form" id="contactForm">

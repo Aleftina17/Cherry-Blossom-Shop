@@ -1,16 +1,14 @@
 .card-blog {
     background-color: #fff;
-    min-width: 290px;
 
-    &__img{
-        
+    &__img {
         overflow: hidden;
         height: 240px;
 
-        img{
+        img {
             width: 100%;
             height: 100%;
-            transform: scale(1.2);
+            transform: scale(1.1);
             object-fit: cover;
         }
     }
@@ -20,7 +18,6 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-    
 
         &--title {
             font-weight: 700;

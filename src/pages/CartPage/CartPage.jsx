@@ -9,10 +9,11 @@ import Navigation from "../../components/Navigation/Navigation";
 import { NavLink } from "react-router-dom";
 import SpecialOffer from "../../components/SpecialOffer/SpecialOffer";
 import QuantityInput from "../../components/QuantityInput/QuantityInput";
-
+import ContinueShoping from "../../components/ContinueShoping/ContinueShoping";
 
 const CartPage = () => {
-  const { removeFromCart, cartItems, updateCartItemQuantity} = useContext(CartContext);
+  const { removeFromCart, cartItems, updateCartItemQuantity } =
+    useContext(CartContext);
   const [subtotal, setSubtotal] = useState(0);
 
   const handleQuantityChange = (index, value) => {
@@ -31,59 +32,69 @@ const CartPage = () => {
         total += price * item.quantity;
       });
       setSubtotal(total);
-     
     };
     calculateSubtotal();
-  }, [cartItems])
-
+  }, [cartItems]);
 
   return (
-    
     <section className="section-cart">
       <div className="container">
         <div className="cart__header">
           <Navigation title="Cart" />
-          <NavLink to="/catalog" className="continue-shoping--link">
-            Continue shopping
-          </NavLink>
+          <ContinueShoping />
         </div>
 
         <div className="cart">
-
           {cartItems.length === 0 ? (
             <div className="cart__empty">Your cart is empty</div>
           ) : (
-          cartItems.map((item, index) => (
-            <div className="cart__row" key={item.title}>
-              <div className="cart__product">
-                <img
-                  className="cart__product__img"
-                  src={item.img}
-                  alt="product"
-                />
-                <div className="cart__product__info">
-                  <div className="cart__product__info--title">{item.title}</div>
-                  <div className="cart__product__info--price">{item.price}</div>
-                  <div className="cart__product__info--size">Size: {item.size}</div>
+            cartItems.map((item, index) => (
+              <div className="cart__row" key={`${item.title}-${item.size}`}>
+                <div className="cart__product">
+                  <img
+                    className="cart__product__img"
+                    src={item.img}
+                    alt="product"
+                  />
+                  <div className="cart--col">
+                    <div className="cart__product__info">
+                      <div className="cart__product__info--title">
+                        {item.title}
+                      </div>
+                      <div className="cart__product__info--price">
+                        {item.price}
+                      </div>
+                      <div className="cart__product__info--size">
+                        Size: {item.size}
+                      </div>
+                    </div>
+
+                    <div className="cart--dynamic">
+                      <QuantityInput
+                        quantity={item.quantity}
+                        setQuantity={(value) =>
+                          handleQuantityChange(index, value)
+                        }
+                      />
+
+                      <div className="cart__delete">
+                        <button
+                          className="delete"
+                          onClick={() => handleRemoveFromCart(item)}
+                        >
+                          <img src={deleteImg} alt="delete" />
+                        </button>
+                      </div>
+
+                      <div className="cart__price">{`$${
+                        item.price.replace("$", "") * item.quantity
+                      }`}</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <QuantityInput
-                  quantity={item.quantity}
-                  setQuantity={(value) => handleQuantityChange(index, value)}
-                />
-
-              <div className="cart__delete">
-                <button className="delete" onClick={() => handleRemoveFromCart(item)}>
-                  <img src={deleteImg} alt="delete" />
-                </button>
-              </div>
-
-              <div className="cart__price">{`$${item.price.replace('$', '') * item.quantity}`}</div>
-            </div>
-          )))}
-
-
+            ))
+          )}
         </div>
 
         <div className="cart__footer">
@@ -122,10 +133,6 @@ const CartPage = () => {
       </div>
     </section>
   );
-
-  
 };
 
 export default CartPage;
-
-

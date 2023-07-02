@@ -9,20 +9,21 @@
     flex-direction: column;
 
     &__title {
-        font-weight: 700;
-        font-size: 24px;
         margin-bottom: 30px;
-        text-align: center;
     }
 
     &__cards {
-        display: flex;
+        display: flex !important;
         overflow: hidden;
         gap: 6%;
         padding: 8px;
-        width: 100%; 
-        flex-wrap: nowrap; 
-    }
+        width: 100%;
+        flex-wrap: nowrap;
+      
+        .slick-slide {
+          outline: none; 
+        }
+      }
 }
 
 
@@ -30,8 +31,30 @@
 /* Slider */
 
 .slider-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 38px;
-}
+    position: relative;
+    width: 90%;
+  margin: 0 auto;
+  padding: 4px;
 
+    .slick-list {
+        margin: 0 -15px;
+      }
+  
+    .btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    .btn--prev {
+        left: -6%;
+      }
+    
+      .btn--next {
+        right: -6%;
+      }
+  }
+
+  .slick-slide{
+    padding: 0px 35px;
+  }

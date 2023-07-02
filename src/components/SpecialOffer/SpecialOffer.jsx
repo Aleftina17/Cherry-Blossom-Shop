@@ -1,33 +1,32 @@
 import { useState } from "react";
 
 import "./special-offer.scss";
-import Card from './../Card/Card'
-import products  from "./../../data/products";
+import Card from "./../Card/Card";
+import products from "./../../data/products";
 
 const SpecialOffer = () => {
+  const sortedProducts = products.filter((product) => product.isOnSale);
 
+  const [showMore, setShowMore] = useState(false);
 
-    const sortedProducts = products.filter((product) => product.isOnSale);
-    
-      const [showMore, setShowMore] = useState(false);
-    
-      const handleClickShowMore = () => {
-        setShowMore(true);
-      };
-    
-      const displayedProducts = showMore ? sortedProducts : sortedProducts.slice(0, 3);
-    
+  const handleClickShowMore = () => {
+    setShowMore(true);
+  };
+
+  const displayedProducts = showMore
+    ? sortedProducts
+    : sortedProducts.slice(0, 3);
 
   return (
     <section className="section-special-offer">
       <div className="container">
         <div className="special-offer">
-        <div className="special-offer__title">Special offer</div>
-        <div className="special-offer__cards">
-
-        {displayedProducts.map((product) => (
+          <h4 className="special-offer__title">Special offer</h4>
+          <div className="special-offer__cards">
+            {displayedProducts.map((product) => (
               <Card
-                key={product.title}
+                id={product.id}
+                key={product.id}
                 title={product.title}
                 price={`$${product.price}`}
                 isOnSale={product.isOnSale}
@@ -38,10 +37,9 @@ const SpecialOffer = () => {
                 className="special-offer__card"
               />
             ))}
+          </div>
 
-        </div>
-
-        {!showMore && (
+          {!showMore && (
             <button
               className="btn btn--show-more"
               onClick={handleClickShowMore}
@@ -49,7 +47,7 @@ const SpecialOffer = () => {
               Show more
             </button>
           )}
-      </div>
+        </div>
       </div>
     </section>
   );

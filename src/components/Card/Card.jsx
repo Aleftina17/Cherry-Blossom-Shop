@@ -1,10 +1,10 @@
-import './card.scss'
-import React, { useState } from 'react';
-import PurchaseModal from '../PurchaseModal/PurchaseModal';
+import "./card.scss";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import PurchaseModal from "../PurchaseModal/PurchaseModal";
 
 const Card = (props) => {
   const [showPurchaseModal, setShowPurchaseModal] = useState(false);
-
 
   const openPurchaseModal = () => {
     setShowPurchaseModal(true);
@@ -15,14 +15,16 @@ const Card = (props) => {
   };
 
   return (
-    <div className={`card ${props.className}`} >
-      <a href="#!" className="card--link">
+    <div className={`card ${props.className}`}>
+      <NavLink to={`/product/${props.id}`} className="card--link">
         <div className="card__img">
           <img src={props.img} alt="boquet" />
         </div>
+      </NavLink>
 
-        <div className="card__desc">
-          <div className="card__desc__info">
+      <div className="card__desc">
+        <div className="card__desc__info">
+          <NavLink to={`/product/${props.id}`} className="card--link">
             <div className="card__desc__info--title">{props.title}</div>
 
             <span
@@ -44,20 +46,17 @@ const Card = (props) => {
                 {props.discountPrice}
               </div>
             )}
-          </div>
-
-          {props.amount !== 0 ? (
-            <button
-              className="btn btn--add-to-cart"
-              onClick={openPurchaseModal}
-            >
-              Add to cart
-            </button>
-          ) : (
-            <button className="btn btn--sold-out">Sold out</button>
-          )}
+          </NavLink>
         </div>
-      </a>
+
+        {props.amount !== 0 ? (
+          <button className="btn btn--add-to-cart" onClick={openPurchaseModal}>
+            Add to cart
+          </button>
+        ) : (
+          <button className="btn btn--sold-out">Sold out</button>
+        )}
+      </div>
 
       {showPurchaseModal && (
         <PurchaseModal
