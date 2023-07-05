@@ -1,15 +1,15 @@
-import "./cart-page.scss";
 
 import { CartContext } from "../../components/CartContext/CartContext";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, Suspense, lazy } from "react";
+
+import "./cart-page.scss";
 
 import deleteImg from "./../../assets/img/cart/delete-ico.svg";
 
-import Navigation from "../../components/Navigation/Navigation";
-import { NavLink } from "react-router-dom";
-import SpecialOffer from "../../components/SpecialOffer/SpecialOffer";
-import QuantityInput from "../../components/QuantityInput/QuantityInput";
-import ContinueShoping from "../../components/ContinueShoping/ContinueShoping";
+const SpecialOffer = lazy(() => import("../../components/SpecialOffer/SpecialOffer"));
+const Navigation = lazy(() => import("../../components/Navigation/Navigation"));
+const QuantityInput = lazy(() => import("../../components/QuantityInput/QuantityInput"));
+const ContinueShoping = lazy(() => import("../../components/ContinueShoping/ContinueShoping"));
 
 const CartPage = () => {
   const { removeFromCart, cartItems, updateCartItemQuantity } =
@@ -40,8 +40,12 @@ const CartPage = () => {
     <section className="section-cart">
       <div className="container">
         <div className="cart__header">
-          <Navigation title="Cart" />
-          <ContinueShoping />
+          <Suspense fallback={<h5>Loading...</h5>}>
+            <Navigation title="Cart" />
+          </Suspense>
+          <Suspense fallback={<h5>Loading...</h5>}>
+            <ContinueShoping />
+          </Suspense>
         </div>
 
         <div className="cart">
@@ -70,12 +74,14 @@ const CartPage = () => {
                     </div>
 
                     <div className="cart--dynamic">
-                      <QuantityInput
-                        quantity={item.quantity}
-                        setQuantity={(value) =>
-                          handleQuantityChange(index, value)
-                        }
-                      />
+                      <Suspense fallback={<h5>Loading...</h5>}>
+                        <QuantityInput
+                          quantity={item.quantity}
+                          setQuantity={(value) =>
+                            handleQuantityChange(index, value)
+                          }
+                        />
+                      </Suspense>
 
                       <div className="cart__delete">
                         <button
@@ -129,7 +135,9 @@ const CartPage = () => {
           </div>
         </div>
 
-        <SpecialOffer />
+        <Suspense fallback={<h3>Loading...</h3>}>
+          <SpecialOffer />
+        </Suspense>
       </div>
     </section>
   );

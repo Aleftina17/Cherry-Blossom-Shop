@@ -102,7 +102,7 @@ const products = [
   },
   {
     id: "pr-7",
-    title: "45 red France roses",
+    title: "Classic 45 red France roses",
     price: 150.00,
     discount: 0.4,
     get discountPrice() {

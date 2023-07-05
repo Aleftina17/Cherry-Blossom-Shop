@@ -1,15 +1,16 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext, lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../components/CartContext/CartContext";
-
 import "./product-page.scss";
 
 import QuantityInput from "../../components/QuantityInput/QuantityInput";
 import SizeSelect from "../../components/SizeSelect/SizeSelect";
 import productsData from "../../data/products";
-import Navigation from "../../components/Navigation/Navigation";
-import SpecialOffer from "../../components/SpecialOffer/SpecialOffer";
-import ContinueShoping from "../../components/ContinueShoping/ContinueShoping";
+
+const Navigation = lazy(() => import("../../components/Navigation/Navigation"));
+const ContinueShoping = lazy(() =>
+  import("../../components/ContinueShoping/ContinueShoping")
+);
 
 const ProductPage = () => {
   const { addToCart } = useContext(CartContext);
@@ -47,10 +48,12 @@ const ProductPage = () => {
     <section className="section-product-page">
       <div className="container">
         <div className="product-page__header">
-        <Navigation title={product.title} />
-        <ContinueShoping />
+          <Suspense fallback={<h5>Loading...</h5>}>
+            <Navigation title={product.title} />
+            <ContinueShoping />
+          </Suspense>
         </div>
-        
+
         <div className="product">
           <div className="product__img">
             <img src={product.img} alt={product.title} />
@@ -110,7 +113,6 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
-        
       </div>
     </section>
   );

@@ -16,6 +16,8 @@ const Subscribe = () => {
               type="email"
               placeholder="E-mail"
               className="subscribe__input"
+              id="subscriberEmail"
+              autoComplete="email"
             />
             <button className="input-submit">
               <img src={arrow} alt="subscribe" />

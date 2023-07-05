@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import "./App.scss";
@@ -5,17 +6,17 @@ import "./common.scss";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import CartPage from "./pages/CartPage/CartPage";
-import Home from "./pages/HomePage/Home";
-import AboutUsPage from "./pages/AboutUsPage/AboutUsPage";
-import CollectionsPage from "./pages/CollectionsPage/CollectionsPage";
-import Menu from "./components/Menu/Menu";
-import CatalogPage from "./pages/CatalogPage/CatalogPage";
-import ProductPage from "./pages/ProductPage/ProductPage";
 
-import ScrollToTop from "./utils/scrollToTop";
-import SearchPage from "./pages/SearchPage/SearchPage";
-import ContactsPage from "./pages/ContactsPage/ContactsPage";
+const CartPage = lazy(() => import("./pages/CartPage/CartPage"));
+const Home = lazy(() => import("./pages/HomePage/Home"));
+const AboutUsPage = lazy(() => import("./pages/AboutUsPage/AboutUsPage"));
+const CollectionsPage = lazy(() => import("./pages/CollectionsPage/CollectionsPage"));
+const Menu = lazy(() => import("./components/Menu/Menu"));
+const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
+const ProductPage = lazy(() => import("./pages/ProductPage/ProductPage"));
+const ScrollToTop = lazy(() => import("./utils/scrollToTop"));
+const SearchPage = lazy(() => import("./pages/SearchPage/SearchPage"));
+const ContactsPage = lazy(() => import("./pages/ContactsPage/ContactsPage"));
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,24 +32,26 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <ScrollToTop />
+        <Suspense fallback={<h3>Loading...</h3>}>
+          <ScrollToTop />
 
-        <Header toggleMenu={toggleMenu} />
+          <Header toggleMenu={toggleMenu} />
 
-        <Menu isOpen={isMenuOpen} closeMenu={closeMenu} />
+          <Menu isOpen={isMenuOpen} closeMenu={closeMenu} />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/collections" element={<CollectionsPage />} />
-          <Route path="/catalog" element={<CatalogPage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="/product/:id" element={<ProductPage />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/about-us" element={<AboutUsPage />} />
+            <Route path="/collections" element={<CollectionsPage />} />
+            <Route path="/catalog" element={<CatalogPage />} />
+            <Route path="/contacts" element={<ContactsPage />} />
+            <Route path="/product/:id" element={<ProductPage />} />
+          </Routes>
 
-        <Footer />
+          <Footer />
+        </Suspense>
       </BrowserRouter>
     </div>
   );

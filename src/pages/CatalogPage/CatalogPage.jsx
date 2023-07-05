@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 
-import Navigation from "../../components/Navigation/Navigation";
-import Card from "../../components/Card/Card";
-
-import "./catalog-page.scss";
 import productsData from "../../data/products";
+import "./catalog-page.scss";
+
+const Navigation = lazy(() => import("../../components/Navigation/Navigation"));
+const Card = lazy(() => import("../../components/Card/Card"));
 
 const CatalogPage = () => {
   const [sortOption, setSortOption] = useState("value1");
@@ -40,7 +40,6 @@ const CatalogPage = () => {
   const sortByRate = (a, b) => {
     return b.rate - a.rate;
   };
-  
 
   // Копия отсортированного массива продуктов в соответствии с выбранной опцией сортировки
   const sortedProducts = [...productsData];
@@ -58,7 +57,9 @@ const CatalogPage = () => {
   return (
     <section className="scetion-catalog-page">
       <div className="container">
-        <Navigation title="Catalog" />
+        <Suspense fallback={<h5>Loading...</h5>}>
+          <Navigation title="Catalog" />
+        </Suspense>
         <div className="catalog-page">
           <h3 className="catalog-page__title">Catalog</h3>
           <div className="container container--sm">
@@ -83,20 +84,22 @@ const CatalogPage = () => {
               </div>
 
               <div className="catalog-page__cards">
-                {sortedProducts.map((product) => (
-                  <Card
-                  id={product.id} 
-                  key={product.id}
-                  title={product.title}
-                  price={`$${product.price}`}
-                  isOnSale={product.isOnSale}
-                  discountPrice={`$${product.discountPrice}`}
-                  discount={`-${product.discount * 100}%`}
-                  img={product.img}
-                  amount={product.amount}
-                  className='catalog-page__card'
-                />
-                ))}
+                <Suspense fallback={<h5>Loading...</h5>}>
+                  {sortedProducts.map((product) => (
+                    <Card
+                      id={product.id}
+                      key={product.id}
+                      title={product.title}
+                      price={`$${product.price}`}
+                      isOnSale={product.isOnSale}
+                      discountPrice={`$${product.discountPrice}`}
+                      discount={`-${product.discount * 100}%`}
+                      img={product.img}
+                      amount={product.amount}
+                      className="catalog-page__card"
+                    />
+                  ))}
+                </Suspense>
               </div>
 
               <div className="catalog-page__pagination">

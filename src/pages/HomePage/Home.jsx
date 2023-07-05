@@ -1,20 +1,19 @@
+import { lazy, Suspense } from "react";
 
-import Address from '../../components/Address/Address';
-import Slider from '../../components/Blogs/Blogs';
-import Blogs from '../../components/Blogs/Blogs';
-import Collections from '../../components/Collections/Collections';
-import Faq from '../../components/Faq/Faq';
-import FollowUs from '../../components/FollowUs/FollowUs';
-import Hero from '../../components/Hero/Hero';
-import Subscribe from '../../components/Subscribe/Subscribe';
-import TopRated from '../../components/TopRated/TopRated';
-import WhyChoose from '../../components/WhyChoose/WhyChoose';
-
-
+const Hero = lazy(() => import("../../components/Hero/Hero"));
+const TopRated = lazy(() => import("../../components/TopRated/TopRated"));
+const Collections = lazy(() => import("../../components/Collections/Collections"));
+const WhyChoose = lazy(() => import("../../components/WhyChoose/WhyChoose"));
+const Subscribe = lazy(() => import("../../components/Subscribe/Subscribe"));
+const Faq = lazy(() => import("../../components/Faq/Faq"));
+const FollowUs = lazy(() => import("../../components/FollowUs/FollowUs"));
+const Blogs = lazy(() => import("../../components/Blogs/Blogs"));
+const Address = lazy(() => import("../../components/Address/Address"));
 
 const Home = () => {
-    return ( 
-        <>
+  return (
+    <>
+      <Suspense fallback={<h5>Loading...</h5>}>
         <Hero />
         <TopRated />
         <Collections />
@@ -22,10 +21,11 @@ const Home = () => {
         <Subscribe />
         <Faq />
         <FollowUs />
-        <Blogs /> 
+        <Blogs />
         <Address />
-        </>
-     );
-}
- 
+      </Suspense>
+    </>
+  );
+};
+
 export default Home;

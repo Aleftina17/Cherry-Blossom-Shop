@@ -1,21 +1,29 @@
+import { lazy, Suspense } from "react";
+
 import "./about-us.scss";
 
 import aboutUsImg from "./../../assets/img/about-us/about-us.jpg";
-import Navigation from "../../components/Navigation/Navigation";
-import Blogs from "../../components/Blogs/Blogs";
-import Subscribe from "../../components/Subscribe/Subscribe";
 
+const Navigation = lazy(() => import("../../components/Navigation/Navigation"));
+const Blogs = lazy(() => import("../../components/Blogs/Blogs"));
+const Subscribe = lazy(() => import("../../components/Subscribe/Subscribe"));
 
 const AboutUs = () => {
   return (
     <section className="section-about-us">
       <div className="container">
-        <Navigation title="About Us" />
+        <Suspense fallback={<h5>Loading...</h5>}>
+          <Navigation title="About Us" />
+        </Suspense>
         <div className="about-us">
           <h3 className="about-us__title">ABOUT US</h3>
         </div>
       </div>
-      <img src={aboutUsImg} alt="About us" className="section-about-us__img" />
+      <img
+        src={aboutUsImg}
+        alt="About us"
+        className="section-about-us__img"
+      />
       <div className="container container--sm">
         <div className="about-us">
           <div className="about-us__text">
@@ -47,10 +55,13 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <Blogs />
-      <Subscribe />
+      <Suspense fallback={<h5>Loading...</h5>}>
+        <Blogs />
+      </Suspense>
+      <Suspense fallback={<h5>Loading...</h5>}>
+        <Subscribe />
+      </Suspense>
     </section>
-
   );
 };
 
