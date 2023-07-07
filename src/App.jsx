@@ -38,7 +38,7 @@ function App() {
 
         <Header toggleMenu={toggleMenu} />
         <Menu isOpen={isMenuOpen} closeMenu={closeMenu} />
-
+        
         <Suspense fallback={<h3>Loading...</h3>}>
           <Routes>
             <Route path="/" element={<Home />} />
