@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Cherry-Blossom-Shop/static/css/main.756ef51d.css",
-    "main.js": "/Cherry-Blossom-Shop/static/js/main.ab6eb48b.js",
+    "main.js": "/Cherry-Blossom-Shop/static/js/main.2afae2d9.js",
     "static/css/474.f9864dbd.chunk.css": "/Cherry-Blossom-Shop/static/css/474.f9864dbd.chunk.css",
     "static/js/474.de696667.chunk.js": "/Cherry-Blossom-Shop/static/js/474.de696667.chunk.js",
     "static/js/711.fa4c31f5.chunk.js": "/Cherry-Blossom-Shop/static/js/711.fa4c31f5.chunk.js",
@@ -100,7 +100,7 @@
     "static/media/arrow-next.svg": "/Cherry-Blossom-Shop/static/media/arrow-next.efc99ccf97fe39b9b0c4.svg",
     "static/media/arrow-prev.svg": "/Cherry-Blossom-Shop/static/media/arrow-prev.d43b3198702a5078b033.svg",
     "main.756ef51d.css.map": "/Cherry-Blossom-Shop/static/css/main.756ef51d.css.map",
-    "main.ab6eb48b.js.map": "/Cherry-Blossom-Shop/static/js/main.ab6eb48b.js.map",
+    "main.2afae2d9.js.map": "/Cherry-Blossom-Shop/static/js/main.2afae2d9.js.map",
     "474.f9864dbd.chunk.css.map": "/Cherry-Blossom-Shop/static/css/474.f9864dbd.chunk.css.map",
     "474.de696667.chunk.js.map": "/Cherry-Blossom-Shop/static/js/474.de696667.chunk.js.map",
     "711.fa4c31f5.chunk.js.map": "/Cherry-Blossom-Shop/static/js/711.fa4c31f5.chunk.js.map",
@@ -150,6 +150,6 @@
   },
   "entrypoints": [
     "static/css/main.756ef51d.css",
-    "static/js/main.ab6eb48b.js"
+    "static/js/main.2afae2d9.js"
   ]
 }
