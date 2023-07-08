@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkflowers_react=self.webpackChunkflowers_react||[]).push([[478],{3478:function(e,n,s){s.r(n),s.d(n,{default:function(){return r}});var a=s(1087),t=s(184),r=function(e){return(0,t.jsxs)("div",{className:"navigation",children:[" ",(0,t.jsx)(a.OL,{to:"/",children:"Home"}),"  / ",(0,t.jsx)("span",{className:"navigation--bold",children:e.title})]})}}}]);
+//# sourceMappingURL=478.8b05b11b.chunk.js.map
