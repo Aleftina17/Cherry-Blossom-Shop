@@ -37,12 +37,15 @@
             gap: 0;
         }
 
-         .row{
-                @media screen and (max-width: 310px) {
-                    flex-direction: column;
-                    align-items: center;
-                }
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media screen and (max-width: 310px) {
+                flex-direction: column;
             }
+        }
     }
 
     &--option {
@@ -57,17 +60,14 @@
             background-color: #fff;
             font-size: 12px;
 
-                @media screen and (max-width: 400px) {
-                    padding: 5px 10px;
-                }
+            @media screen and (max-width: 400px) {
+                padding: 5px 10px;
+            }
 
-
-                @media screen and (max-width: 310px) {
-                    width: 100px;
-                    display: block;
-                }
-
-                
+            @media screen and (max-width: 310px) {
+                width: 100px;
+                display: block;
+            }
         }
 
         input {
