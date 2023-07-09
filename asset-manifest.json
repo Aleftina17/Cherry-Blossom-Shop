@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cherry-blossom-shop/static/css/main.38420a0d.css",
-    "main.js": "/cherry-blossom-shop/static/js/main.7f45f434.js",
+    "main.js": "/cherry-blossom-shop/static/js/main.027eb71f.js",
     "static/js/711.fa4c31f5.chunk.js": "/cherry-blossom-shop/static/js/711.fa4c31f5.chunk.js",
     "static/css/474.f9864dbd.chunk.css": "/cherry-blossom-shop/static/css/474.f9864dbd.chunk.css",
     "static/js/474.de696667.chunk.js": "/cherry-blossom-shop/static/js/474.de696667.chunk.js",
@@ -100,7 +100,7 @@
     "static/media/arrow-next.svg": "/cherry-blossom-shop/static/media/arrow-next.efc99ccf97fe39b9b0c4.svg",
     "static/media/arrow-prev.svg": "/cherry-blossom-shop/static/media/arrow-prev.d43b3198702a5078b033.svg",
     "main.38420a0d.css.map": "/cherry-blossom-shop/static/css/main.38420a0d.css.map",
-    "main.7f45f434.js.map": "/cherry-blossom-shop/static/js/main.7f45f434.js.map",
+    "main.027eb71f.js.map": "/cherry-blossom-shop/static/js/main.027eb71f.js.map",
     "711.fa4c31f5.chunk.js.map": "/cherry-blossom-shop/static/js/711.fa4c31f5.chunk.js.map",
     "474.f9864dbd.chunk.css.map": "/cherry-blossom-shop/static/css/474.f9864dbd.chunk.css.map",
     "474.de696667.chunk.js.map": "/cherry-blossom-shop/static/js/474.de696667.chunk.js.map",
@@ -150,6 +150,6 @@
   },
   "entrypoints": [
     "static/css/main.38420a0d.css",
-    "static/js/main.7f45f434.js"
+    "static/js/main.027eb71f.js"
   ]
 }
