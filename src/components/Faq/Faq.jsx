@@ -63,7 +63,7 @@ const Faq = () => {
             {faqData.map((item, index) => (
               <li className="faq__list__item" key={index}>
                 <div className="faq__question">
-                  <a
+                  <a href="#!"
                     className={`faq__question--toggler ${
                       openIndex === index ? "open" : ""
                     }`}

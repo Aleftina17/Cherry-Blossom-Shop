@@ -8,8 +8,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Menu from "./components/Menu/Menu";
 
-const CartPage = lazy(() => import("./pages/CartPage/CartPage"));
 const Home = lazy(() => import("./pages/HomePage/Home"));
+const CartPage = lazy(() => import("./pages/CartPage/CartPage"));
 const AboutUsPage = lazy(() => import("./pages/AboutUsPage/AboutUsPage"));
 const CollectionsPage = lazy(() =>
   import("./pages/CollectionsPage/CollectionsPage")
