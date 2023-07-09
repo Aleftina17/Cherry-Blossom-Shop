@@ -1,6 +1,7 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
+
 import "./App.scss";
 import "./common.scss";
 
@@ -21,6 +22,9 @@ const SearchPage = lazy(() => import("./pages/SearchPage/SearchPage"));
 const ContactsPage = lazy(() => import("./pages/ContactsPage/ContactsPage"));
 
 function App() {
+
+  const baseUrl = process.env.PUBLIC_URL || '/';
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -33,6 +37,7 @@ function App() {
 
   return (
     <div className="App">
+      <BrowserRouter basename={baseUrl}>
       <ScrollToTop />
 
       <Header toggleMenu={toggleMenu} />
@@ -51,6 +56,7 @@ function App() {
         </Routes>
       </Suspense>
       <Footer />
+      </BrowserRouter>
     </div>
   );
 }

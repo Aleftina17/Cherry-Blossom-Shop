@@ -1,7 +1,7 @@
 {
   "name": "flowers-react",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "http://Aleftina17.github.io/cherry-blossom-shop",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
