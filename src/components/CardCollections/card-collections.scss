@@ -1,0 +1,73 @@
+.card-collections {
+    min-width: 360px;
+    min-height: 340px;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+
+    @media screen and (max-width: 770px) {
+        min-height: 200px;
+        min-width: 180px;
+    }
+
+    &--link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, #ffffff 0%, #857b7b 100%);
+        opacity: 0.4;
+        box-shadow: inset -1.91808e-15px -31.3246px 31.3246px #665f5f, inset 1.91808e-15px 31.3246px 31.3246px #ffffff;
+        z-index: 9;
+        pointer-events: none;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 4px 4px 20px rgba(31, 31, 31, 0.521);
+        color: #fff;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @media screen and (max-width: 770px) {
+            font-size: 30px;
+            white-space: nowrap;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        transition: all 0.2s ease-in;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &:hover .card-collections__img {
+        transform: scale(1.2);
+        filter: saturate(1.5);
+    }
+}

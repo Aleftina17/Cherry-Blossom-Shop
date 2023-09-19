@@ -1,0 +1,44 @@
+.quantity-input {
+  max-width: 90px;
+
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #665f5f;
+  border-radius: 5px;
+  padding: 4px 15px;
+  font-size: 16px;
+
+  @media screen and (max-width: 860px) {
+    padding: 4px 6px;
+    width: 55px;
+  }
+
+  button {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 5px;
+
+    @media screen and (max-width: 830px) {
+      padding: 0;
+    }
+  }
+
+  input {
+    border: none;
+    outline: none;
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    width: 100%;
+    text-align: center;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

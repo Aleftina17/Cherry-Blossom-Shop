@@ -1,0 +1,57 @@
+.section-why-choose {
+    margin: 90px 0px;
+}
+
+.why-choose {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &__cards {
+        display: flex;
+        gap: 47px;
+
+        @media screen and (max-width:1040px) {
+            gap: 10px;
+        }
+
+
+        @media screen and (max-width:980px) {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+       
+    }
+
+    &__card {
+        box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        padding: 20px 25px 36px;
+        line-height: 1.2;
+
+
+        &__header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 10px;
+
+            @media screen and (max-width:980px) {
+                gap: 10px;
+            }
+
+        }
+
+        &--title {
+            font-weight: 700;
+            font-size: 24px;
+
+            @media screen and (max-width:1040px) {
+                font-size: 20px;
+            }
+            
+        }
+    }
+}

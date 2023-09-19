@@ -1,0 +1,56 @@
+.section-address {
+    background-image: url("./../../assets/img/address/address-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        transition: color 0.1s ease-in;
+
+        &:hover {
+            color: darken(#ffd1d7, 5%);
+        }
+    }
+
+    &__card {
+        background-color: #fff;
+        padding: 70px 75px;
+        margin: 120px auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 470px;
+
+        @media screen and (max-width: 460px) {
+            font-size: 14px;
+            padding: 40px 50px;
+            margin: 80px auto;
+        }
+
+        &--img {
+            margin-bottom: 7px;
+        }
+
+        &--title {
+            margin-bottom: 25px;
+            text-transform: none;
+        }
+
+        &--address,
+        &--time {
+            text-align: center;
+        }
+
+        &--address {
+            margin-bottom: 32px;
+        }
+    }
+}

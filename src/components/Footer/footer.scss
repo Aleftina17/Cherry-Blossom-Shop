@@ -1,0 +1,114 @@
+.section-footer {
+    padding-bottom: 30px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media screen and (max-width: 620px) {
+        flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 285px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__menu,
+    &__notice {
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        flex-basis: 50%;
+
+        @media screen and (max-width: 620px) {
+            padding-top: 20px;
+        }
+
+        a {
+            transition: color 0.1s ease-in;
+
+            &:hover {
+                color: darken(#ffd1d7, 5%);
+            }
+        }
+
+        .list__title {
+            text-transform: none;
+            margin-bottom: 20px;
+        }
+
+        .list__item {
+            font-size: 12px;
+            margin-bottom: 14px;
+        }
+    }
+
+    &__contact {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        flex-basis: 100%;
+
+        @media screen and (max-width: 620px) {
+            order: -1;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        &--img {
+            margin-bottom: 30px;
+
+            @media screen and (max-width: 760px) {
+                max-width: 100px;
+            }
+        }
+
+        &--address,
+        &--time,
+        &--phone,
+        &--email {
+            font-size: 12px;
+        }
+
+        &--address,
+        &--time,
+        &--email {
+            margin-bottom: 18px;
+        }
+
+        &--socials {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        &--payment {
+            margin-bottom: 17px;
+
+            @media screen and (max-width: 760px) {
+                max-width: 400px;
+            }
+
+            @media screen and (max-width: 620px) {
+                display: none;
+            }
+        }
+
+        &--copyright{
+            @media screen and (max-width: 620px) {
+                display: none;
+            }
+        }
+    }
+}
